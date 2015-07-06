@@ -1,9 +1,9 @@
 BUILD = build
 BOOKNAME = my-book
-TITLE = 
+TITLE = title.txt
 METADATA = metadata.xml
 CHAPTERS = ch01.md ch02.md
-TOC = --toc --toc-depth=2
+TOC = --toc --toc-depth=1
 COVER_IMAGE = images/cover.jpg
 LATEX_CLASS = report
 
@@ -18,6 +18,8 @@ clean:
 	rm -r $(BUILD)
 
 epub: $(BUILD)/epub/$(BOOKNAME).epub
+
+mobi: $(BUILD)/mobi/$(BOOKNAME).epub
 
 html: $(BUILD)/html/$(BOOKNAME).html
 
