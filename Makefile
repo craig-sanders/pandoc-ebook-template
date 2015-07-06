@@ -22,11 +22,11 @@ pdf: $(BUILD)/pdf/$(BOOKNAME).pdf
 
 $(BUILD)/epub/$(BOOKNAME).epub: $(TITLE) $(CHAPTERS)
 	mkdir -p $(BUILD)/epub
-	pandoc $(TOC) -S --epub-metadata=$(METADATA) --epub-cover-image=$(COVER_IMAGE) -o $@ $^
+	pandoc $(TOC) -S --epub-stylesheet=css/epub.css --epub-metadata=$(METADATA) --epub-cover-image=$(COVER_IMAGE) -o $@ $^
 
 $(BUILD)/mobi/$(BOOKNAME).epub: $(TITLE) $(CHAPTERS)
 	mkdir -p $(BUILD)/mobi
-	pandoc $(TOC) -S --epub-metadata=$(METADATA) --epub-cover-image=$(COVER_IMAGE) -o $@ $<
+	pandoc $(TOC) -S --epub-stylesheet=css/epub.css --epub-metadata=$(METADATA) --epub-cover-image=$(COVER_IMAGE) -o $@ $<
 	$(KINDLEGEN) $(KINDLEGEN_OPTS) $@ > /dev/null
 	rm $(BUILD)/mobi/$(BOOKNAME).epub
 	
