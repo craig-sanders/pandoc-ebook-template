@@ -1,6 +1,6 @@
 BUILD = build
 BOOKNAME = my-book
-TITLE = title.txt
+TITLE =
 METADATA = metadata.xml
 CHAPTERS = ch01.md ch02.md
 TOC = --toc --toc-depth=1
