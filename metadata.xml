@@ -1,2 +1,7 @@
-<dc:rights>Copyright 2013, J. Random Author</dc:rights>
+<dc:title>BOOK TITLE</dc:title>
+<dc:creator opf:role="aut">AUTHOR NAME</dc:creator>
 <dc:language>en-US</dc:language>
+<dc:publisher>BOOK PUBLISHER</dc:publisher>
+<dc:type>GENRE(S)</dc:type>
+<dc:rights>This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Unported License.</dc:rights>
+<dc:date opf:event="publication">PUBLICATION DATE</dc:date>
