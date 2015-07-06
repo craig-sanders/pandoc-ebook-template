@@ -24,6 +24,12 @@ $(BUILD)/epub/$(BOOKNAME).epub: $(TITLE) $(CHAPTERS)
 	mkdir -p $(BUILD)/epub
 	pandoc $(TOC) -S --epub-metadata=$(METADATA) --epub-cover-image=$(COVER_IMAGE) -o $@ $^
 
+$(BUILD)/mobi/$(BOOKNAME).epub: $(TITLE) $(CHAPTERS)
+	mkdir -p $(BUILD)/mobi
+	pandoc $(TOC) -S --epub-metadata=$(METADATA) --epub-cover-image=$(COVER_IMAGE) -o $@ $<
+	$(KINDLEGEN) $(KINDLEGEN_OPTS) $@ > /dev/null
+	rm $(BUILD)/mobi/$(BOOKNAME).epub
+	
 $(BUILD)/html/$(BOOKNAME).html: $(CHAPTERS)
 	mkdir -p $(BUILD)/html
 	pandoc $(TOC) --standalone --to=html5 -o $@ $^
